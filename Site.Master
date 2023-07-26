@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="project2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <h1>        JAY GANESH
+
+    </h1>
+    
+    <img src="finalbaner.png" width="100%" height="300PX"/>
+    <style>
+        .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position:page;
+  height:auto;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display:block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+   width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+   text-align: center;
+    float: none;
+  }
+}
+
+        
+
+    </style>
+</head>
+   
+<body>
+    <form runat="server">
+         
+              <a class="navbar-brand" runat="server" href="~/"><b>UNIQ AUTOMOTIVES</b></a>
+               
+             <div class="sidebar">
+        
+       <ul>
+                        <li class="nav-item" ><a class="active" runat="server" href="~/">HOME</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/login">LOGIN</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/registration">REGISTRATION</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/product">PRODUCT</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/services">SERVICES</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/About">ABOUT</a></li>
+                        <li class="nav-item" ><a class="" runat="server" href="~/Contact">CONTACT</a></li>
+                      
+
+
+
+       </ul>
+                     </div>
+              
+        
+               
+    
+  
+
+<!-- Page content -->
+<div class="content">
+         <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %>  COPYRIGHT BY  - UNIQ AUTOMOTIVES</p>
+            </footer>
+        </div>
+
+</div>
+      
+        
+      </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
